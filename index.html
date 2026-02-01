@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>M2_W4_D1</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="container">
+        <header>
+            <h1>Trova il lavoro dei tuoi sogni</h1>
+        </header>
+    
+        <main>
+            <div id="btnCont">
+                <input type="text" id="countryInp" class="btn" placeholder="Inserisci la località">
+                <input type="text" id="jobInp" class="btn" placeholder="Inserisci l'occupazione">
+                <button type="button" onclick="search(document.getElementById('countryInp').value, document.getElementById('jobInp').value)">Cerca</button>
+            </div>
+            <div id="resultCont"></div>    
+        </main>
+    </div>
+
+
+    <script src="scaricabile.js"></script>
+
+
+</body>
+</html>
