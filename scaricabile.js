@@ -126,22 +126,28 @@ const jobs = [
 //Esercizio
 
 function search(country,job){
-  let userCountryLow=country.toLowerCase()
-  let userJobLow=job.toLowerCase()
+
   let resultArray=[]
 
-  for(i=0;i<jobs.length;i++){
 
-    confJob=jobs[i].title.toLowerCase()
-    confJobLow=confJob.toLowerCase()
+  if(country!=="" || job!==""){
 
-    confCountry=jobs[i].location
-    confCountryLow=confCountry.toLowerCase()
-
-    if(confCountryLow.includes(userCountryLow) && confJobLow.includes(userJobLow)){
-      resultArray.push(jobs[i])  
+    let userCountryLow=country.toLowerCase()
+    let userJobLow=job.toLowerCase()
+    
+    for(i=0;i<jobs.length;i++){
+  
+      confJob=jobs[i].title.toLowerCase()
+      confJobLow=confJob.toLowerCase()
+  
+      confCountry=jobs[i].location
+      confCountryLow=confCountry.toLowerCase()
+  
+      if(confCountryLow.includes(userCountryLow) && confJobLow.includes(userJobLow)){
+        resultArray.push(jobs[i])  
+      }
+  
     }
-
   }
 
   let resultObj={
@@ -196,7 +202,13 @@ function search(country,job){
       posResultUl.appendChild(posResultLi)
     }
 
+    if(resultArray.length>1){
     posResultP2.innerHTML= resultArray.length +" elementi trovati"
+    }else{
+    posResultP2.innerHTML= resultArray.length +" elemento trovato"
+    }
+
+
     posResultP2.id="posP2"
 
   }else{
